@@ -26,4 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProCarlosV1.Core\ProCarlosV1.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
 </Project>
