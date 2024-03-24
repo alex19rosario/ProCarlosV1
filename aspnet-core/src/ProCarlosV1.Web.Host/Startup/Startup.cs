@@ -17,6 +17,8 @@ using Abp.AspNetCore.SignalR.Hubs;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using ProCarlosV1.EntityFrameworkCore;
 
 namespace ProCarlosV1.Web.Host.Startup
 {
@@ -68,6 +70,11 @@ namespace ProCarlosV1.Web.Host.Startup
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             ConfigureSwagger(services);
+
+            var connectionString = _appConfiguration.GetConnectionString("Default");
+
+            services.AddEntityFrameworkNpgsql().AddDbContext<ProCarlosV1DbContext>(options =>
+                options.UseNpgsql(connectionString));
 
             // Configure Abp and Dependency Injection
             services.AddAbpWithoutCreatingServiceProvider<ProCarlosV1WebHostModule>(
