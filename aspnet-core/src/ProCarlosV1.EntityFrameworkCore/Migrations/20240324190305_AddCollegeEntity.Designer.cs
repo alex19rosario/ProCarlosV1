@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProCarlosV1.EntityFrameworkCore;
@@ -11,9 +12,11 @@ using ProCarlosV1.EntityFrameworkCore;
 namespace ProCarlosV1.Migrations
 {
     [DbContext(typeof(ProCarlosV1DbContext))]
-    partial class ProCarlosV1DbContextModelSnapshot : ModelSnapshot
+    [Migration("20240324190305_AddCollegeEntity")]
+    partial class AddCollegeEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
