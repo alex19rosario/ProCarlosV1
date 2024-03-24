@@ -23,6 +23,11 @@ namespace ProCarlosV1.EntityFrameworkCore
             modelBuilder.Entity<Abp.Localization.ApplicationLanguageText>()
                 .Property(p => p.Value)
                 .HasMaxLength(100); // any integer that is smaller than 10485760
+
+            modelBuilder.Entity<Student>()
+                .HasOne(s => s.College)
+                .WithMany(c => c.Students)
+                .HasForeignKey(s => s.CollegeId);
         }
     }
 }

@@ -22,5 +22,6 @@ namespace ProCarlosV1.Models
         public string Email { get; set; }
         public string Director { get; set; }
         public bool IsActive { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }

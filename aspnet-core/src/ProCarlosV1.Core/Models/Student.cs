@@ -27,5 +27,8 @@ namespace ProCarlosV1.Models
 
         public bool IsActive { get; set; }
 
+        public int CollegeId {  get; set; }
+        public College College {  get; set; }
+
     }
 }
