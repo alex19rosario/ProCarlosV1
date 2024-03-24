@@ -26,6 +26,7 @@ namespace ProCarlosV1.Web.Host.Startup
 
         public override void PreInitialize()
         {
+            Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
             System.AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
             System.AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             // https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations
