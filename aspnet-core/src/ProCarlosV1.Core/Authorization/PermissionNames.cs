@@ -9,6 +9,6 @@
 
         public const string Pages_Roles = "Pages.Roles";
         public const string Pages_Students = "Pages.Students";
-
+        public const string Pages_Colleges = "Pages.Colleges";
     }
 }

@@ -11,6 +11,7 @@ namespace ProCarlosV1.EntityFrameworkCore
     {
         /* Define a DbSet for each entity of the application */
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<College> Colleges { get; set; }
         public ProCarlosV1DbContext(DbContextOptions<ProCarlosV1DbContext> options)
             : base(options)
         {
