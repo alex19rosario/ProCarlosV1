@@ -1,5 +1,7 @@
 ﻿using Abp.Application.Services;
+using Abp.Authorization;
 using Abp.Domain.Repositories;
+using ProCarlosV1.Authorization;
 using ProCarlosV1.Models;
 using ProCarlosV1.Students.Dto;
 using System;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ProCarlosV1.Students
 {
-    // [AbpAuthorize(PermissionNames.Pages_Students)]
+    [AbpAuthorize(PermissionNames.Pages_Students)]
     public class StudentAppService : AsyncCrudAppService<Student, StudentDto, int, PagedStudentResultRequestDto, CreateStudentDto, UpdateStudentDto>, IStudentAppService
     {
         public StudentAppService
