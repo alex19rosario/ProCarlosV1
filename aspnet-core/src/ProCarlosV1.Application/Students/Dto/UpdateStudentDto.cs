@@ -19,6 +19,7 @@ namespace ProCarlosV1.Students.Dto
         public string ProgramName { get; set; }
         public string DoB { get; set; }
         public bool IsActive { get; set; }
+        public int CollegeId { get; set; }
         ///UpdateDto.cs.fields1///
 
     }
