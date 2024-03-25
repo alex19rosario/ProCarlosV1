@@ -117,6 +117,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
                 '/app/students',
                 'fas fa-building',
                 'Pages.Students'
+            ),
+            new MenuItem(
+                this.l('Colleges'),
+                '/app/colleges',
+                'fas fa-building',
+                'Pages.Colleges'
             )
         ];
     }

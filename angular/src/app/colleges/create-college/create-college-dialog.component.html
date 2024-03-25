@@ -1,0 +1,206 @@
+<form
+		class="form-horizontal"
+		autocomplete="off"
+		#createCollegeForm="ngForm"
+		(ngSubmit)="save()"
+>
+	<abp-modal-header
+			[title]="'CreateNewCollege' | localize"
+			(onCloseClick)="bsModalRef.hide()"
+	></abp-modal-header>
+	<div class="modal-body">
+		
+		<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="Name">
+        {{ "Name" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.name"
+            #nameModel="ngModel"
+            #nameEl
+        />
+        <abp-validation-summary
+                [control]="nameModel"
+                [controlEl]="nameEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="address">
+        {{ "Address" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="address"
+            id="address"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.address"
+            #addressModel="ngModel"
+            #addressEl
+        />
+        <abp-validation-summary
+                [control]="addressModel"
+                [controlEl]="addressEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="description">
+        {{ "Description" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="description"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.description"
+            #descriptionModel="ngModel"
+            #descriptionEl
+        />
+        <abp-validation-summary
+                [control]="descriptionModel"
+                [controlEl]="descriptionEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="gpsLatitude">
+        {{ "GpsLatitude" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="gpsLatitude"
+            id="gpsLatitude"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.gpsLatitude"
+            #gpsLatitudeModel="ngModel"
+            #gpsLatitudeEl
+        />
+        <abp-validation-summary
+                [control]="gpsLatitudeModel"
+                [controlEl]="gpsLatitudeEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="longitude">
+        {{ "Longitude" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="longitude"
+            id="longitude"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.longitude"
+            #longitudeModel="ngModel"
+            #longitudeEl
+        />
+        <abp-validation-summary
+                [control]="longitudeModel"
+                [controlEl]="longitudeEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="email">
+        {{ "Email" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="email"
+            id="email"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.email"
+            #emailModel="ngModel"
+            #emailEl
+        />
+        <abp-validation-summary
+                [control]="emailModel"
+                [controlEl]="emailEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+
+<div class="form-group row required">
+    <label class="col-md-3 col-form-label" for="director">
+        {{ "Director" | localize }}
+    </label>
+    <div class="col-md-9">
+        <input
+            type="text"
+            class="form-control"
+            name="director"
+            id="director"
+            required
+            minlength="2"
+            maxlength="256"
+            [(ngModel)]="college.director"
+            #directorModel="ngModel"
+            #directorEl
+        />
+        <abp-validation-summary
+                [control]="directorModel"
+                [controlEl]="directorEl"
+        ></abp-validation-summary>
+    </div>
+</div>
+<!--create-dialog.component.html.fields1-->
+
+		<div class="form-group row mb-0">
+			<label class="col-md-3 col-form-label">
+				{{ "IsActive" | localize }}
+			</label>
+			<div class="col-md-9">
+				<div class="custom-control custom-checkbox">
+					<input
+							type="checkbox"
+							class="custom-control-input"
+							name="isActive"
+							id="isActive"
+							[(ngModel)]="college.isActive"
+					/>
+					<label class="custom-control-label mt-2" for="isActive"></label>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<abp-modal-footer
+			[cancelDisabled]="saving"
+			[saveDisabled]="!createCollegeForm.form.valid || saving"
+			(onCancelClick)="bsModalRef.hide()"
+	></abp-modal-footer>
+</form>
