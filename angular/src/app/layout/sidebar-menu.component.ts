@@ -111,7 +111,13 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
                         'far fa-circle'
                     )
                 ])
-            ])
+            ]),
+            new MenuItem(
+                this.l('Students'),
+                '/app/students',
+                'fas fa-building',
+                'Pages.Students'
+            )
         ];
     }
 
